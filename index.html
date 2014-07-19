@@ -882,7 +882,10 @@
     };
     $('#clickCheck').click(function(e){
         //checkFormCompleteChecked();
+
         e.preventDefault();
+
+        checkQuestionAnswerOrNot();
         //return true;
     });
     function checkFormCompleteChecked()
@@ -891,19 +894,23 @@
         alert($(question).attr('checked'));
 
     }
-    function checkQuestionAnswerOrNot(question, answerNo)
+    function checkQuestionAnswerOrNot()
     {
-        for (i=1; i<=4; i++)
-        {
+        label_array = [];
 
-            //if($('#question'+i).val()==null)
-        }
+        label_array = $("fieldset").find("label").each(function(){ label_array.push(this.id); });
+        //alert('asdfasdf');
+        console.log(label_array);
+
+
+
+
     }
     $('label').click(function(){
         //alert('sdfsdf');
         id = $('label').attr('for');
-        alert(id);
-        $("#"+id).attr('checked','true');
+        //alert(id);
+        //$("#"+id).attr('checked','true');
     });
 
 </script>
