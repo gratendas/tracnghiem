@@ -1,4 +1,4 @@
-/**
+ff/**
  *
  * '||''|.                            '||
  *  ||   ||    ....  .... ...   ....   ||    ...   ... ...  ... ..
@@ -1515,6 +1515,7 @@ span.select {
 		text-indent: -9999px;
 		white-space: nowrap;
 		background: url(../../img/effects/wizard-steps-separator.png) no-repeat left center;
+		background-size: 10% 100%;
 		overflow: hidden;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 		filter: alpha(opacity=50);
@@ -1544,7 +1545,7 @@ span.select {
 		.wizard-steps > .active {
 			width: auto;
 			text-indent: 0;
-			padding: 0 9px 0 65px;
+			padding: 0 9px 0 46px;
 		}
 	.wizard-step {
 		display: block;
@@ -1705,7 +1706,7 @@ span.select {
 		.wizard-steps > li {
 			width: auto;
 			text-indent: 0;
-			padding: 0 9px 0 65px;
+			padding: 0 9px 0 46px;
 		}
 		.wizard-step {
 			margin-left: -32px;
