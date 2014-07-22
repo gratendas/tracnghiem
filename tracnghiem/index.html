@@ -86,8 +86,8 @@
     <meta name="msapplication-tooltip" content="Cross-platform admin template.">
     <meta name="msapplication-starturl" content="http://www.display-inline.fr/demo/developr">
     <!-- These custom tasks are examples, you need to edit them to show actual pages -->
-    <meta name="msapplication-task" content="name=Agenda;action-uri=http://www.display-inline.fr/demo/developr/agenda.html;icon-uri=http://www.display-inline.fr/demo/developr/img/favicons/favicon.ico">
-    <meta name="msapplication-task" content="name=My profile;action-uri=http://www.display-inline.fr/demo/developr/profile.html;icon-uri=http://www.display-inline.fr/demo/developr/img/favicons/favicon.ico">
+    <meta name="msapplication-task" content="name=Agenda;action-uri=http://www.anphabe.com;icon-uri=http://www.display-inline.fr/demo/developr/img/favicons/favicon.ico">
+    <meta name="msapplication-task" content="name=My profile;action-uri=http://www.anphabe.com;icon-uri=http://www.display-inline.fr/demo/developr/img/favicons/favicon.ico">
 </head>
 
 <body class="full-page-wizard">
@@ -116,6 +116,7 @@
 
 <h3 class="block-title">Trắc Nghiệm EQ by <a href="http://anphabe.com"><img src="http://www.anphabe.com/sites/all/themes/anphabe/logo.png" style="width:10%; height:10%"/></a></h3>
 <image src="" style="position:absolute; height: 42px; width: 100%; z-index:9999; cursor: pointer;" />
+
 <fieldset class="wizard-fieldset fields-list">
 
     <legend class="legend">1</legend>
@@ -757,8 +758,9 @@
         //dump_custom(save_attr_value);
         if(Object.size(save_attr_value)<12)
         {
-            console.log("Ban chua dien tra loi het cac cau hoi :)")
+            alert('Bạn chưa trả lời hết các câu hỏi :)');
             e.preventDefault();
+
 
         }
 
@@ -783,8 +785,6 @@
         }
         return size;
     };
-
-
 
     $(document).ready(function()
     {
