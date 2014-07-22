@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+
+<!--[if IEMobile 7]><html class="no-js iem7 oldie linen"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js ie7 oldie linen" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js ie8 oldie linen" lang="en"><![endif]-->
+<!--[if (IE 9)&!(IEMobile)]><html class="no-js ie9 linen" lang="en"><![endif]-->
+<!--[if (gt IE 9)|(gt IEMobile 7)]><!--><html class="no-js linen" lang="en"><!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>EQ Quiz</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- http://davidbcalhoun.com/2010/viewport-metatag -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <!-- http://www.kylejlarson.com/blog/2012/iphone-5-web-design/ and http://darkforge.blogspot.fr/2010/05/customize-android-browser-scaling-with.html -->
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0, target-densitydpi=115">
+
+    <!-- For all browsers -->
+    <link rel="stylesheet" href="css/reset.css?v=1">
+    <link rel="stylesheet" href="css/style.css?v=1">
+    <link rel="stylesheet" href="css/colors.css?v=1">
+    <link rel="stylesheet" media="print" href="css/print.css?v=1">
+    <!-- For progressively larger displays -->
+    <link rel="stylesheet" media="only all and (min-width: 480px)" href="css/480.css?v=1">
+    <link rel="stylesheet" media="only all and (min-width: 768px)" href="css/768.css?v=1">
+    <link rel="stylesheet" media="only all and (min-width: 992px)" href="css/992.css?v=1">
+    <link rel="stylesheet" media="only all and (min-width: 1200px)" href="css/1200.css?v=1">
+    <!-- For Retina displays -->
+    <link rel="stylesheet" media="only all and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5)" href="css/2x.css?v=1">
+
+    <!-- Additional styles -->
+    <link rel="stylesheet" href="css/styles/form.css?v=1">
+    <link rel="stylesheet" href="css/styles/switches.css?v=1">
+    <link rel="stylesheet" href="css/styles/modal.css?v=1">
+
+    <!-- jQuery Form Validation -->
+    <link rel="stylesheet" href="js/libs/formValidator/developr.validationEngine.css?v=1">
+
+    <!-- JavaScript at bottom except for Modernizr -->
+    <script src="js/libs/modernizr.custom.js"></script>
+
+    <!-- For Modern Browsers -->
+    <link rel="shortcut icon" href="img/favicons/favicon.png">
+    <!-- For everything else -->
+    <link rel="shortcut icon" href="img/favicons/favicon.ico">
+
+    <!-- iOS web-app metas -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- iPhone ICON -->
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png" sizes="57x57">
+    <!-- iPad ICON -->
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon-ipad.png" sizes="72x72">
+    <!-- iPhone (Retina) ICON -->
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon-retina.png" sizes="114x114">
+    <!-- iPad (Retina) ICON -->
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon-ipad-retina.png" sizes="144x144">
+
+    <!-- iPhone SPLASHSCREEN (320x460) -->
+    <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="(device-width: 320px)">
+    <!-- iPhone (Retina) SPLASHSCREEN (640x960) -->
+    <link rel="apple-touch-startup-image" href="img/splash/iphone-retina.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)">
+    <!-- iPhone 5 SPLASHSCREEN (640×1096) -->
+    <link rel="apple-touch-startup-image" href="img/splash/iphone5.png" media="(device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+    <!-- iPad (portrait) SPLASHSCREEN (748x1024) -->
+    <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="(device-width: 768px) and (orientation: portrait)">
+    <!-- iPad (landscape) SPLASHSCREEN (768x1004) -->
+    <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="(device-width: 768px) and (orientation: landscape)">
+    <!-- iPad (Retina, portrait) SPLASHSCREEN (2048x1496) -->
+    <link rel="apple-touch-startup-image" href="img/splash/ipad-portrait-retina.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2)">
+    <!-- iPad (Retina, landscape) SPLASHSCREEN (1536x2008) -->
+    <link rel="apple-touch-startup-image" href="img/splash/ipad-landscape-retina.png" media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)">
+
+    <!-- Microsoft clear type rendering -->
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- IE9 Pinned Sites: http://msdn.microsoft.com/en-us/library/gg131029.aspx -->
+    <meta name="application-name" content="Developr Admin Skin">
+    <meta name="msapplication-tooltip" content="Cross-platform admin template.">
+    <meta name="msapplication-starturl" content="http://www.display-inline.fr/demo/developr">
+    <!-- These custom tasks are examples, you need to edit them to show actual pages -->
+    <meta name="msapplication-task" content="name=Agenda;action-uri=http://www.display-inline.fr/demo/developr/agenda.html;icon-uri=http://www.display-inline.fr/demo/developr/img/favicons/favicon.ico">
+    <meta name="msapplication-task" content="name=My profile;action-uri=http://www.display-inline.fr/demo/developr/profile.html;icon-uri=http://www.display-inline.fr/demo/developr/img/favicons/favicon.ico">
+</head>
+
+<body class="full-page-wizard">
+
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1455268004720163',
+            status : true,
+            cookie : true,
+            xfbml      : true,
+            version    : 'v2.0'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+</script>
+<form method="post" action="" class="block wizard same-height" name="frm" id="frm" onsubmit="ShowResult(); return false;">
+
+<h3 class="block-title">Trắc Nghiệm EQ by <a href="http://anphabe.com"><img src="http://www.anphabe.com/sites/all/themes/anphabe/logo.png" style="width:10%; height:10%"/></a></h3>
+<image src="" style="position:absolute; height: 42px; width: 100%; z-index:9999; cursor: pointer;" />
+<fieldset class="wizard-fieldset fields-list">
+
+    <legend class="legend">1</legend>
+
+    <div class="field-block">
+        <h4>Question 1!</h4>
+        <p>When I am upset, I can usually pinpoint exactly why I am distressed.</p>
+    </div>
+
+    <p class="button-height inline-label">
+						<span class="button-group">
+
+							<div class="field-block button-height">
+                                <label for="first_name" class="label" ><b>Option a</b></label>
+                                <label for="button-radio-cau1-1" class="button green-active" style="z-index:9999">
+                                    <input type="radio" name="cauhoi[1]" id="button-radio-cau1-1" value="1" checked>
+                                    •	Strongly Agree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option b</b></label>
+                                <label for="button-radio-cau1-2" class="button green-active">
+                                    <input type="radio" name="cauhoi[1]" id="button-radio-cau1-2" value="2">
+                                    •	Agree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option c</b></label>
+                                <label for="button-radio-cau1-3" class="button green-active">
+                                    <input type="radio" name="cauhoi[1]" id="button-radio-cau1-3" value="3">
+                                    •	Disagree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option d</b></label>
+                                <label for="button-radio-cau1-4" class="button green-active">
+                                    <input type="radio" name="cauhoi[1]" id="button-radio-cau1-4" value="4">
+                                    •	Strongly Disagree
+                                </label>
+                            </div>
+									
+									
+						</span>
+    </p>
+
+</fieldset>
+
+<fieldset class="wizard-fieldset fields-list">
+
+    <legend class="legend">2</legend>
+
+    <div class="field-block">
+        <h4>Question 2!</h4>
+        <p>While there are some things that I would like to change, I generally like who I am.</p>
+    </div>
+
+    <p class="button-height inline-label">
+						<span class="button-group">
+							<div class="field-block button-height">
+                                <label for="first_name" class="label"><b>Option a</b></label>
+                                <label for="button-radio-cau2-1" class="button green-active">
+                                    <input type="radio" name="cauhoi[2]" id="button-radio-cau2-1" value="1" >
+                                    •	Strongly Agree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option b</b></label>
+                                <label for="button-radio-cau2-2" class="button green-active">
+                                    <input type="radio" name="cauhoi[2]" id="button-radio-cau2-2" value="2">
+                                    •	Agree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option c</b></label>
+                                <label for="button-radio-cau2-3" class="button green-active">
+                                    <input type="radio" name="cauhoi[2]" id="button-radio-cau2-3" value="3">
+                                    •	Disagree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option d</b></label>
+                                <label for="button-radio-cau2-4" class="button green-active">
+                                    <input type="radio" name="cauhoi[2]" id="button-radio-cau2-4" value="4">
+                                    •	Strongly Disagree
+                                </label>
+                            </div>
+									
+									
+								</span>
+    </p>
+
+</fieldset>
+
+<fieldset class="wizard-fieldset fields-list">
+
+    <legend class="legend">3</legend>
+
+    <div class="field-block">
+        <h4>Question 3!</h4>
+        <p>I tend to avoid confrontations. When I am involved in a confrontation, I become extremely anxious</p>
+    </div>
+
+    <p class="button-height inline-label">
+						<span class="button-group">
+							<div class="field-block button-height">
+                                <label for="first_name" class="label"><b>Option a</b></label>
+                                <label for="button-radio-cau3-1" class="button green-active">
+                                    <input type="radio" name="cauhoi[3]" id="button-radio-cau3-1" value="1" >
+                                    •	Strongly Agree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option b</b></label>
+                                <label for="button-radio-cau3-2" class="button green-active">
+                                    <input type="radio" name="cauhoi[3]" id="button-radio-cau3-2" value="2">
+                                    •	Agree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option c</b></label>
+                                <label for="button-radio-cau3-3" class="button green-active">
+                                    <input type="radio" name="cauhoi[3]" id="button-radio-cau3-3" value="3">
+                                    •	Disagree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option d</b></label>
+                                <label for="button-radio-cau3-4" class="button green-active">
+                                    <input type="radio" name="cauhoi[3]" id="button-radio-cau3-4" value="4">
+                                    •	Strongly Disagree
+                                </label>
+                            </div>
+									
+									
+								</span>
+    </p>
+
+</fieldset>
+
+<fieldset class="wizard-fieldset fields-list">
+
+    <legend class="legend">4</legend>
+
+    <div class="field-block">
+        <h4>Question 4!</h4>
+        <p>I am generally aloof and detached until I really get to know a person</p>
+    </div>
+
+    <p class="button-height inline-label">
+						<span class="button-group">
+							<div class="field-block button-height">
+                                <label for="first_name" class="label"><b>Option a</b></label>
+                                <label for="button-radio-cau4-1" class="button green-active">
+                                    <input type="radio" name="cauhoi[4]" id="button-radio-cau4-1" value="1" >
+                                    •	Strongly Agree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option b</b></label>
+                                <label for="button-radio-cau4-2" class="button green-active">
+                                    <input type="radio" name="cauhoi[4]" id="button-radio-cau4-2" value="2">
+                                    •	Agree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option c</b></label>
+                                <label for="button-radio-cau4-3" class="button green-active">
+                                    <input type="radio" name="cauhoi[4]" id="button-radio-cau4-3" value="3">
+                                    •	Disagree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option d</b></label>
+                                <label for="button-radio-cau4-4" class="button green-active">
+                                    <input type="radio" name="cauhoi[4]" id="button-radio-cau4-4" value="4">
+                                    •	Strongly Disagree
+                                </label>
+                            </div>
+									
+									
+								</span>
+    </p>
+
+</fieldset>
+
+<fieldset class="wizard-fieldset fields-list">
+
+    <legend class="legend">5</legend>
+
+    <div class="field-block">
+        <h4>Question 5!</h4>
+        <p>I tend to overreact to minor problems</p>
+    </div>
+
+    <p class="button-height inline-label">
+						<span class="button-group">
+							<div class="field-block button-height">
+                                <label for="first_name" class="label"><b>Option a</b></label>
+                                <label for="button-radio-cau5-1" class="button green-active">
+                                    <input type="radio" name="cauhoi[5]" id="button-radio-cau5-1" value="1" >
+                                    •	Strongly Agree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option b</b></label>
+                                <label for="button-radio-cau5-2" class="button green-active">
+                                    <input type="radio" name="cauhoi[5]" id="button-radio-cau5-2" value="2">
+                                    •	Agree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option c</b></label>
+                                <label for="button-radio-cau5-3" class="button green-active">
+                                    <input type="radio" name="cauhoi[5]" id="button-radio-cau5-3" value="3">
+                                    •	Disagree
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option d</b></label>
+                                <label for="button-radio-cau5-4" class="button green-active">
+                                    <input type="radio" name="cauhoi[5]" id="button-radio-cau5-4" value="4">
+                                    •	Strongly Disagree
+                                </label>
+                            </div>
+									
+									
+								</span>
+    </p>
+
+</fieldset>
+
+<fieldset class="wizard-fieldset fields-list">
+
+    <legend class="legend">6</legend>
+
+    <div class="field-block">
+        <h4>Question 6!</h4>
+        <p>When I am facing an unpleasant task, I tend to: </p>
+    </div>
+
+    <p class="button-height inline-label">
+						<span class="button-group">
+							<div class="field-block button-height">
+                                <label for="first_name" class="label"><b>Option a</b></label>
+                                <label for="button-radio-cau6-1" class="button green-active">
+                                    <input type="radio" name="cauhoi[6]" id="button-radio-cau6-1" value="1" >
+                                    •	Make a plan and work on it a little each day
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option b</b></label>
+                                <label for="button-radio-cau6-2" class="button green-active">
+                                    <input type="radio" name="cauhoi[6]" id="button-radio-cau6-2" value="2">
+                                    •	Get it over with as soon as possible
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option c</b></label>
+                                <label for="button-radio-cau6-3" class="button green-active">
+                                    <input type="radio" name="cauhoi[6]" id="button-radio-cau6-3" value="3">
+                                    •	Put it off until the last minute
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option d</b></label>
+                                <label for="button-radio-cau6-4" class="button green-active">
+                                    <input type="radio" name="cauhoi[6]" id="button-radio-cau6-4" value="4">
+                                    •	Don't do it at all
+                                </label>
+                            </div>
+									
+									
+								</span>
+    </p>
+
+</fieldset>
+
+<fieldset class="wizard-fieldset fields-list">
+
+    <legend class="legend">7</legend>
+
+    <div class="field-block">
+        <h4>Question 7!</h4>
+        <p>During a heated argument, I am more likely to: </p>
+    </div>
+
+    <p class="button-height inline-label">
+						<span class="button-group">
+							<div class="field-block button-height">
+                                <label for="first_name" class="label"><b>Option a</b></label>
+                                <label for="button-radio-cau7-1" class="button green-active">
+                                    <input type="radio" name="cauhoi[7]" id="button-radio-cau7-1" value="1" >
+                                    •	Stop the fight and agree to a short break before resuming the discussion.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option b</b></label>
+                                <label for="button-radio-cau7-2" class="button green-active">
+                                    <input type="radio" name="cauhoi[7]" id="button-radio-cau7-2" value="2">
+                                    •	Shut down and stop responding to the other person.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option c</b></label>
+                                <label for="button-radio-cau7-3" class="button green-active">
+                                    <input type="radio" name="cauhoi[7]" id="button-radio-cau7-3" value="3">
+                                    •	Give in and apologize in order to quickly end the argument.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option d</b></label>
+                                <label for="button-radio-cau7-4" class="button green-active">
+                                    <input type="radio" name="cauhoi[7]" id="button-radio-cau7-4" value="4">
+                                    •	Start insulting the other person.
+                                </label>
+                            </div>
+									
+									
+								</span>
+    </p>
+
+</fieldset>
+
+<fieldset class="wizard-fieldset fields-list">
+
+    <legend class="legend">8</legend>
+
+    <div class="field-block">
+        <h4>Question 8!</h4>
+        <p>When making an important decision, I tend to: </p>
+    </div>
+
+    <p class="button-height inline-label">
+						<span class="button-group">
+							<div class="field-block button-height">
+                                <label for="first_name" class="label"><b>Option a</b></label>
+                                <label for="button-radio-cau8-1" class="button green-active">
+                                    <input type="radio" name="cauhoi[8]" id="button-radio-cau8-1" value="1" >
+                                    •	Follow my instincts
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option b</b></label>
+                                <label for="button-radio-cau8-2" class="button green-active">
+                                    <input type="radio" name="cauhoi[8]" id="button-radio-cau8-2" value="2">
+                                    •	Rely on direction from other people
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option c</b></label>
+                                <label for="button-radio-cau8-3" class="button green-active">
+                                    <input type="radio" name="cauhoi[8]" id="button-radio-cau8-3" value="3">
+                                    •	Go with the easiest option
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option d</b></label>
+                                <label for="button-radio-cau8-4" class="button green-active">
+                                    <input type="radio" name="cauhoi[8]" id="button-radio-cau8-4" value="4">
+                                    •	Guess randomly
+                                </label>
+                            </div>
+									
+									
+								</span>
+    </p>
+
+</fieldset>
+
+<fieldset class="wizard-fieldset fields-list">
+
+    <legend class="legend">9</legend>
+
+    <div class="field-block">
+        <h4>Question 9!</h4>
+        <p>Which of the following statements best describes you?</p>
+    </div>
+
+    <p class="button-height inline-label">
+						<span class="button-group">
+							<div class="field-block button-height">
+                                <label for="first_name" class="label"><b>Option a</b></label>
+                                <label for="button-radio-cau9-1" class="button green-active">
+                                    <input type="radio" name="cauhoi[9]" id="button-radio-cau9-1" value="1" >
+                                    •	I have an easy time making friends and getting to know new people.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option b</b></label>
+                                <label for="button-radio-cau9-2" class="button green-active">
+                                    <input type="radio" name="cauhoi[9]" id="button-radio-cau9-2" value="2">
+                                    •	I get along well with others, but I have to really get to know someone before they become a true friend.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option c</b></label>
+                                <label for="button-radio-cau9-3" class="button green-active">
+                                    <input type="radio" name="cauhoi[9]" id="button-radio-cau9-3" value="3">
+                                    •	I find it difficult to meet people and make friends.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option d</b></label>
+                                <label for="button-radio-cau9-4" class="button green-active">
+                                    <input type="radio" name="cauhoi[9]" id="button-radio-cau9-4" value="4">
+                                    •	I cannot make friends.
+                                </label>
+                            </div>
+									
+									
+								</span>
+    </p>
+
+</fieldset>
+
+<fieldset class="wizard-fieldset fields-list">
+
+    <legend class="legend">10</legend>
+
+    <div class="field-block">
+        <h4>Question 10!</h4>
+        <p>You have invested a lot of time and energy into a project for one of your businesses. While you feel confident about your work, your chief just underestimate your project. How do you deal with this situation?</p>
+    </div>
+
+    <p class="button-height inline-label">
+						<span class="button-group">
+							<div class="field-block button-height">
+                                <label for="first_name" class="label"><b>Option a</b></label>
+                                <label for="button-radio-cau10-1" class="button green-active" style="z-index:9999">
+                                    <input type="radio" name="cauhoi[10]" id="button-radio-cau10-1" value="1" >
+                                    •	Decide your company is stupid and stop putting forth your best efforts.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option b</b></label>
+                                <label for="button-radio-cau10-2" class="button green-active">
+                                    <input type="radio" name="cauhoi[10]" id="button-radio-cau10-2" value="2">
+                                    •	Berate and criticize your own work.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option c</b></label>
+                                <label for="button-radio-cau10-3" class="button green-active">
+                                    <input type="radio" name="cauhoi[10]" id="button-radio-cau10-3" value="3">
+                                    •	Confront your chief and ask for a better result
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option d</b></label>
+                                <label for="button-radio-cau10-4" class="button green-active">
+                                    <input type="radio" name="cauhoi[10]" id="button-radio-cau10-4" value="4">
+                                    •	Think about ways you could improve the project and apply these ideas to future work
+                                </label>
+                            </div>
+									
+									
+								</span>
+    </p>
+
+</fieldset>
+
+<fieldset class="wizard-fieldset fields-list">
+
+    <legend class="legend">11</legend>
+
+    <div class="field-block">
+        <h4>Question 11!</h4>
+        <p>One of your co-workers has a habit that annoys you. The problem seems to be getting worse each day. How do you respond?</p>
+    </div>
+
+    <p class="button-height inline-label">
+						<span class="button-group">
+							<div class="field-block button-height">
+                                <label for="first_name" class="label"><b>Option a</b></label>
+                                <label for="button-radio-cau11-1" class="button green-active">
+                                    <input type="radio" name="cauhoi[11]" id="button-radio-cau11-1" value="1" >
+                                    •	Tell your co-worker what is bothering you.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option b</b></label>
+                                <label for="button-radio-cau11-2" class="button green-active">
+                                    <input type="radio" name="cauhoi[11]" id="button-radio-cau11-2" value="2">
+                                    •	Make a complaint about the behavior to your supervisor.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option c</b></label>
+                                <label for="button-radio-cau11-3" class="button green-active">
+                                    <input type="radio" name="cauhoi[11]" id="button-radio-cau11-3" value="3">
+                                    •	Talk about your coworker beind his back.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option d</b></label>
+                                <label for="button-radio-cau11-4" class="button green-active">
+                                    <input type="radio" name="cauhoi[11]" id="button-radio-cau11-4" value="4">
+                                    •	Suffer in silence.
+                                </label>
+                            </div>
+									
+									
+						</span>
+    </p>
+
+</fieldset>
+
+<fieldset class="wizard-fieldset fields-list">
+
+    <legend class="legend">12</legend>
+
+    <div class="field-block">
+        <h4>Question 12!</h4>
+        <p>You've been feeling stressed out at work and haven't finished projects as quickly as you should. When your boss suddenly assigns you another large project, how to you feel?</p>
+    </div>
+
+    <p class="button-height inline-label">
+						<span class="button-group">
+							<div class="field-block button-height">
+                                <label for="first_name" class="label"><b>Option a</b></label>
+                                <label for="button-radio-cau12-1" class="button green-active">
+                                    <input type="radio" name="cauhoi[12]" id="button-radio-cau12-1" value="1" >
+                                    •	Anxious about getting all the work done.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option b</b></label>
+                                <label for="button-radio-cau12-2" class="button green-active">
+                                    <input type="radio" name="cauhoi[12]" id="button-radio-cau12-2" value="2">
+                                    •	Overwhelmed by the task before you.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option c</b></label>
+                                <label for="button-radio-cau12-3" class="button green-active">
+                                    <input type="radio" name="cauhoi[12]" id="button-radio-cau12-3" value="3">
+                                    •	Angry that your boss hasn't noticed how overworked you are.
+                                </label>
+                            </div>
+							
+							<div class="field-block button-height">
+                                <label for="last_name" class="label"><b>Option d</b></label>
+                                <label for="button-radio-cau12-4" class="button green-active">
+                                    <input type="radio" name="cauhoi[12]" id="button-radio-cau12-4" value="4" checked>
+                                    •	Depressed and sure that you can never finish it all.
+                                </label>
+                            </div>
+									
+									
+								</span>
+    </p>
+
+    <div class="field-block button-height wizard-controls align-right">
+
+        <button type="submit" class="button glossy mid-margin-right" id="clickCheck">
+            <span class="button-icon"><span class="icon-tick"></span></span>
+            Save
+        </button>
+
+    </div>
+</fieldset>
+
+</form>
+
+<!-- JavaScript at the bottom for fast page loading -->
+
+<!-- Scripts -->
+<script src="js/libs/jquery-1.10.2.min.js"></script>
+<script src="js/setup.js"></script>
+
+<!-- Template functions -->
+<script src="js/developr.input.js"></script>
+<script src="js/developr.modal.js"></script>
+<script src="js/developr.message.js"></script>
+<script src="js/developr.notify.js"></script>
+<script src="js/developr.scroll.js"></script>
+<script src="js/developr.tooltip.js"></script>
+<script src="js/developr.wizard.js"></script>
+<script src="js/developr.tabs.js"></script>
+
+<!-- Google code prettifier -->
+<script src="js/libs/google-code-prettify/prettify.js?v=1"></script>
+
+<!-- jQuery Form Validation -->
+<script src="js/libs/formValidator/jquery.validationEngine.js?v=1"></script>
+<script src="js/libs/formValidator/languages/jquery.validationEngine-en.js?v=1"></script>
+<script>
+
+    $(document).ready(function()
+    {
+        // Elements
+        var form = $('.wizard'),
+
+        // If layout is centered
+                centered;
+
+        // Handle resizing (mostly for debugging)
+        function handleWizardResize()
+        {
+            centerWizard(false);
+        };
+
+        // Register and first call
+        $(window).on('normalized-resize', handleWizardResize);
+
+        /*
+         * Center function
+         * @param boolean animate whether or not to animate the position change
+         * @return void
+         */
+        function centerWizard(animate)
+        {
+            form[animate ? 'animate' : 'css']({ marginTop: Math.max(0, Math.round(($.template.viewportHeight-30-form.outerHeight())/2))+'px' });
+        };
+
+        // Initial vertical adjust
+        centerWizard(false);
+
+        // Refresh position on change step
+        form.on('wizardchange', function() { centerWizard(true); });
+
+        // Validation
+        if ($.validationEngine)
+        {
+            form.validationEngine();
+        }
+
+        $("button[name='Next']").click(function(){
+            alert("a");
+
+        });
+
+
+
+
+    });
+
+    function Calculate(){
+        var cauhoi = $('#frm').serializeArray();
+        var a=0,b=0,c=0,d=0;
+        for (var i =0; i<12; i++){
+            if (cauhoi[i].value == 1) a=a+4;
+            if (cauhoi[i].value == 2) b=b+3;
+            if (cauhoi[i].value == 3) c=c+2;
+            if (cauhoi[i].value == 4) d=d+1;
+        }
+        var tong = a+b+c+d;
+        return tong;
+    }
+    function ShowResult(){
+        var score = Calculate();
+        var content = "";
+        if (score>=41 && score<=48){
+            content = "<img src='http://iconbug.com/data/7e/256/d491f4154965e0bfe191f55d3a1497b5.png' height='80px' width='80px' /><h3 class='thin'>Xin chúc mừng, bạn là người cực kì khéo cư xử, có chính kiến riêng và biết cách làm cho suy nghĩ của mình ảnh hưởng lên người khác lắm đấy.</h3>";
+        }
+        if (score >=34 && score <= 40){
+            content = "<img src='https://cdn1.iconfinder.com/data/icons/musthave/256/Positive.png' height='80px' width='80px' /><h3 class='thin'>Bạn là người biết đánh giá bản thân, hiểu tâm lý của những người xung quanh, biết thích nghi với hoàn cảnh, linh hoạt, tự tin và rất dễ thành đạt </h3>";
+        }
+        if (score >=20 && score <= 33){
+            content = "<img src='http://iconbug.com/data/7e/256/035f90135ed09bef8786992e2c113ea9.png' height='80px' width='80px' /><h3 class='thin'>Chỉ số EQ của bạn đạt loại trung bình. Bạn nhận biết và hiểu được cảm xúc của mình nhưng còn hạn chế về cách ứng xử và khả năng cảm thông với người khác. Đừng dừng lại và thỏa mãn, hãy cố gắng để hoàn thiện mình nhé.</h3>";
+        }
+        if (score >=12 && score <= 19){
+            content = "<img src='http://1.bp.blogspot.com/-RP6Rv-x72Z0/T_5a4VferNI/AAAAAAAAAtI/YJ6oy7TGv1E/s1600/lost_emoticon.png' height='80px' width='80px' /><h3 class='thin'>Chỉ số thông tuệ về cảm xúc của bạn đáng phàn nàn, cần rèn luyện nhiều hơn nữa!</h3>";
+        }
+        openComplexModal(content);
+    }
+
+    function openComplexModal(quizContent)
+    {
+        $.modal({
+            content: quizContent,
+            title: '',
+            width: 500,
+            scrolling: false,
+            actions: {
+                'Close' : {
+                    color: 'red',
+                    click: function(win) { win.closeModal(); }
+                },
+                'Center' : {
+                    color: 'green',
+                    click: function(win) { win.centerModal(true); }
+                },
+                'Other action' : {
+                    color: 'blue',
+                    click: function(win) { win.closeModal(); }
+                },
+                'Last action' : {
+                    color: 'orange',
+                    click: function(win) { win.closeModal(); }
+                }
+            },
+            buttons: {
+                'Post your wall':{
+                    classes:	'small blue-gradient glossy',
+                    click:		function() {
+                        FB.login(function(){
+                            FB.ui(
+                                    {
+                                        method: 'feed',
+                                        name: 'Trắc Nghiệm EQ by Anphabe',
+                                        caption: 'Trắc Nghiệm EQ by Anphabe\'s fanpage',
+                                        description: (
+                                                'Một mini Quiz giúp đánh giá về chỉ số EQ của bạn ' +
+                                                        'EQ - Chỉ số cảm xúc '
+                                                ),
+                                        link: 'https://redlicense.net/appfb/',
+                                        picture: 'http://dragonflytraining.files.wordpress.com/2013/07/eq-vs-iq1.jpg'
+                                    },
+                                    function(response) {
+                                        if (response && response.post_id) {
+                                            alert('Post was published.');
+                                        } else {
+                                            alert('Post was not published.');
+                                        }
+                                    }
+                            );
+                        }, {scope: 'publish_actions'});
+                    }
+                },
+                'Visit Anphabe.com': {
+                    classes: 'small red-gradient glossy',
+                    click:  function(){window.location = "http://www.anphabe.com"; }
+
+                }
+            },
+            buttonsLowPadding: true
+        });
+    };
+    $('#clickCheck').click(function(e){
+        //checkFormCompleteChecked();
+
+        e.preventDefault();
+
+        checkQuestionAnswerOrNot();
+        //return true;
+    });
+    function checkFormCompleteChecked()
+    {
+        question="#button-radio-cau12-4";
+        alert($(question).attr('checked'));
+
+    }
+    function checkQuestionAnswerOrNot()
+    {
+        label_array = [];
+
+        label_array = $("fieldset").find("label").each(function(){ label_array.push(this.id); });
+        //alert('asdfasdf');
+        console.log(label_array);
+
+
+
+
+    }
+    $('label').click(function(){
+        //alert('sdfsdf');
+        id = $('label').attr('for');
+        //alert(id);
+        //$("#"+id).attr('checked','true');
+    });
+
+</script>
+
+</body>
+</html>
